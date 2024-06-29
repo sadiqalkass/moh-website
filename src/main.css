@@ -1,0 +1,635 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ECF0F1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+input {
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border: 1px solid #2C3E50;
+  outline: none;
+  border-radius: 10px;
+}
+
+input::-moz-placeholder {
+  color: #2C3E50;
+}
+
+input::placeholder {
+  color: #2C3E50;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.sidebar {
+  position: relative;
+}
+.sidebar .navigation {
+  position: fixed;
+  width: 281px;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  border-right: 1px #BDC3C7 solid;
+  background-color: #2C3E50;
+}
+.sidebar .navigation .brand_space {
+  margin: 15px 0;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar .navigation .brand_space .nav_name {
+  padding: 15px 30px;
+  background-color: whitesmoke;
+  color: #2C3E50;
+  border-radius: 5px;
+}
+.sidebar .navigation ul {
+  width: 100%;
+  position: relative;
+  height: 90vh;
+  padding-top: 10px;
+}
+.sidebar .navigation ul li {
+  cursor: pointer;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.sidebar .navigation ul li ion-icon {
+  padding-top: 4px;
+  padding-right: 10px;
+}
+.sidebar .navigation ul li:hover {
+  background-color: rgba(59, 89, 120, 0.8470588235);
+  width: 80%;
+}
+.sidebar .navigation ul hr {
+  padding: 0;
+}
+.sidebar .navigation ul .scul-div {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: 65%;
+}
+.sidebar .navigation ul .scul-div hr {
+  position: absolute;
+  width: 100%;
+}
+
+.topbar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 283px;
+  color: #2C3E50;
+  border-bottom: 1px solid #2C3E50;
+  width: 77.5%;
+  padding-bottom: 6px;
+}
+.topbar .fr-div {
+  width: 50%;
+  position: relative;
+  padding: 10px;
+}
+.topbar .fr-div input {
+  background-color: whitesmoke;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  border: 1px solid #BDC3C7;
+  border-radius: 10px;
+  padding-left: 35px;
+}
+.topbar .fr-div span {
+  position: absolute;
+  top: 23px;
+  left: 20px;
+}
+.topbar .fr-div span ion-icon {
+  font-size: 20px;
+}
+.topbar .sec-div {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  width: 35%;
+}
+.topbar .sec-div ion-icon {
+  font-size: 25px;
+}
+.topbar .sec-div .topbr-img {
+  display: flex;
+}
+.topbar .sec-div .topbr-img span {
+  padding-top: 5px;
+}
+.topbar .sec-div .topbr-img .pic-cont {
+  font-size: 12px;
+  padding-left: 7px;
+}
+.topbar .sec-div .topbr-img .pic-cont p {
+  padding: 0;
+}
+.topbar .sec-div .topbr-img .pic-cont .username {
+  font-weight: 600;
+}
+
+.auth-div {
+  padding: 15px;
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.auth-div .fr-half {
+  position: relative;
+}
+.auth-div .fr-half img {
+  width: 550px;
+  height: 95vh;
+  top: 17px;
+  left: 18px;
+  border-radius: 20px;
+}
+.auth-div .fr-half .img-span {
+  position: absolute;
+  background-color: rgba(189, 195, 199, 0.4039215686);
+  padding: 35px;
+  left: 17px;
+  width: 80%;
+  border-radius: 10px;
+  top: 75%;
+  text-align: center;
+}
+.auth-div .fr-half .img-span p {
+  font-size: 17px;
+}
+.auth-div .sec-half {
+  position: relative;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.auth-div .sec-half .fr-a {
+  color: #2C3E50;
+}
+.auth-div .sec-half .tob-left {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.auth-div .sec-half .form-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 8%;
+}
+.auth-div .sec-half .form-container .fr-div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.auth-div .sec-half .form-container .fr-div a {
+  color: whitesmoke;
+  padding: 0.6rem;
+  text-align: center;
+  background-color: rgba(44, 62, 80, 0.4);
+  width: 100%;
+  border-radius: 5px;
+}
+.auth-div .sec-half .form-container .fr-div .or-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.auth-div .sec-half .form-container .fr-div .or-div hr {
+  display: block;
+  width: 40%;
+  height: 1%;
+  color: rgba(44, 62, 80, 0.4);
+}
+.auth-div .sec-half .form-container form .name-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auth-div .sec-half .form-container form .name-div input {
+  width: 50%;
+}
+.auth-div .sec-half .form-container form .input-div {
+  position: relative;
+  height: auto;
+  padding: 15px 0;
+}
+.auth-div .sec-half .form-container form .input-div span {
+  position: absolute;
+  display: block;
+  padding: 0 2px;
+  background-color: whitesmoke;
+  text-align: center;
+  width: auto;
+  height: 20px;
+  top: 0;
+  bottom: 50px;
+  left: 30px;
+  z-index: 100;
+}
+.auth-div .sec-half .form-container form .input-div input {
+  padding: 0.5rem;
+  width: 100%;
+}
+.auth-div .sec-half .form-container form .ch-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 15px;
+}
+.auth-div .sec-half .form-container form .ch-div p {
+  display: flex;
+  width: 100%;
+}
+.auth-div .sec-half .form-container form .ch-div input {
+  width: 17px;
+  background-color: #BDC3C7;
+}
+.auth-div .sec-half .form-container form .ch-div p {
+  padding-left: 7px;
+}
+.auth-div .sec-half .form-container form button {
+  width: 100%;
+  background-color: #2C3E50;
+  font-size: 15px;
+}
+.auth-div .sec-half .form-container form a {
+  display: block;
+  padding-top: 15px;
+  color: #2C3E50;
+  text-align: center;
+  width: 100%;
+}
+
+section {
+  position: absolute;
+  left: 22%;
+  top: 90px;
+  padding: 10px;
+  color: black;
+  width: 77.5vw;
+}
+section .section-head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+section .section-head button {
+  background-color: #2C3E50;
+  font-size: 15px;
+}
+section .sub-cont {
+  background-color: whitesmoke;
+  margin-top: 15px;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+section .sub-cont .subCont-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .sub-cont .subCont-head .search-div {
+  width: 40%;
+  position: relative;
+}
+section .sub-cont .subCont-head .search-div span {
+  position: absolute;
+  top: 7px;
+  left: 5px;
+}
+section .sub-cont .subCont-head .search-div span ion-icon {
+  font-size: 20px;
+}
+section .sub-cont .subCont-head .search-div input {
+  padding: 0.7rem;
+  padding-left: 30px;
+  width: 100%;
+}
+section .sub-cont table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+section .sub-cont table th, section .sub-cont table td {
+  text-align: left;
+  padding: 10px 27px;
+}
+section .sub-cont table tr {
+  border-bottom: 1px solid #ddd;
+}
+section .sub-cont table td {
+  color: rgba(30, 30, 30, 0.8);
+}
+section .sub-cont table tr:hover {
+  background-color: rgba(233, 239, 244, 0.5019607843);
+}
+section .sub-cont table .tb-head {
+  background-color: rgba(189, 195, 199, 0.5019607843);
+}
+section .sub-cont table .tb-head th {
+  color: rgba(44, 62, 80, 0.8784313725);
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+section .sub-cont table .name-td {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+section .sub-cont table .name-td .icon-span {
+  font-size: 24px;
+  padding-right: 15px;
+}
+section .sub-cont table .name-td .icon-span ion-icon {
+  color: gray;
+}
+section .sub-cont table .name-td .name-span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section .sub-cont table .name-td .name-span p {
+  font-size: 17px;
+  color: black;
+}
+section .sub-cont table .name-td .name-span span {
+  font-size: 12px;
+  color: rgba(30, 30, 30, 0.8);
+}
+section .sub-cont table .staff-stat {
+  padding: 6px 14px;
+  background-color: rgba(44, 62, 80, 0.1019607843);
+  border-radius: 8px;
+  font-size: 13px;
+}
+section .sub-cont table .active {
+  color: green;
+}
+section .sub-cont table .notActive {
+  color: red;
+}
+section .sub-cont table .sickLv {
+  color: orange;
+}
+section .sub-cont table .inTraning {
+  color: blue;
+}
+section .sub-cont table .dtAdd-td {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.dash-cont .main-cont {
+  padding-top: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+  width: 77.5%;
+}
+.dash-cont .main-cont .main-div {
+  width: auto;
+  height: auto;
+  background-color: ghostwhite;
+  border: 1px solid black;
+}
+.dash-cont .main-cont .top-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.dash-cont .main-cont .top-half .tfr-half {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+.dash-cont .main-cont .top-half .tfr-half .cont {
+  padding: 10px;
+  border: 1px solid #BDC3C7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.dash-cont .main-cont .top-half .tfr-half .cont .icon-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.dash-cont .main-cont .top-half .tfr-half .cont .icon-div p {
+  font-size: 12px;
+}
+.dash-cont .main-cont .top-half .tfr-half .cont .icon-div span {
+  padding: 5px;
+  border: 1px solid #BDC3C7;
+  border-radius: 100%;
+}
+.dash-cont .main-cont .top-half .tfr-half .cont h3 {
+  padding: 7px;
+  font-size: 25px;
+}
+.dash-cont .main-cont .sec-half {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+}
+
+.tasks-cont .sub-cont {
+  border: 2px dashed #BDC3C7;
+}
+.tasks-cont .sub-cont .subCont-head button {
+  background-color: whitesmoke;
+  color: black;
+  border: 1px #BDC3C7 solid;
+}
+.tasks-cont .sub-cont .status-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.tasks-cont .sub-cont .status-cont .status-div {
+  margin-top: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.tasks-cont .sub-cont .status-cont .status-div .main-span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks-cont .sub-cont .status-cont .status-div .main-span span {
+  font-size: 12px;
+  margin-left: 10px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+.tasks-cont .sub-cont .status-cont .status-div .main-span .fr {
+  background-color: orangered;
+}
+.tasks-cont .sub-cont .status-cont .status-div .main-span .sec {
+  background-color: blue;
+}
+.tasks-cont .sub-cont .status-cont .status-div .main-span .thir {
+  background-color: green;
+}
+.tasks-cont .sub-cont .status-cont .status-div .icon-span {
+  cursor: pointer;
+}
+.tasks-cont .sub-cont .task-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.tasks-cont .sub-cont .task-div .single-task {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  padding: 10px;
+  border: dashed 2px #BDC3C7;
+  border-radius: 10px;
+}
+.tasks-cont .sub-cont .task-div .single-task .req-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks-cont .sub-cont .task-div .single-task .req-div span {
+  background-color: rgb(0, 217, 255);
+  color: blue;
+  font-size: 14px;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+}
+.tasks-cont .sub-cont .task-div .single-task .req-div .medium {
+  background-color: rgba(255, 166, 0, 0.653);
+  color: orangered;
+}
+.tasks-cont .sub-cont .task-div .single-task .req-div .iocn {
+  padding: 0.7rem;
+  border: 1px solid #BDC3C7;
+  background-color: whitesmoke;
+}
+.tasks-cont .sub-cont .task-div .single-task .task-content {
+  padding: 25px 0px;
+  width: 70%;
+}
+.tasks-cont .sub-cont .task-div .single-task .task-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+.tasks-cont .sub-cont .task-div .single-task .task-content p {
+  font-size: 14px;
+}
+.tasks-cont .sub-cont .task-div .single-task hr {
+  position: absolute;
+  width: 100%;
+  top: 80%;
+  left: 0;
+}
+.tasks-cont .sub-cont .task-div .single-task .date-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks-cont .sub-cont .task-div .single-task .date-div p {
+  font-size: 14px;
+  color: gray;
+}
+.tasks-cont .sub-cont .task-div .single-task .date-div ion-icon {
+  color: gray;
+}
+
+.staffs-cont .section-head button {
+  position: relative;
+  padding: 9px 30px;
+}
+.staffs-cont .section-head button span {
+  position: absolute;
+  font-size: 20px;
+  left: 10px;
+  top: 6px;
+}
+.staffs-cont .sub-cont {
+  padding: 0;
+  border: 1px solid #BDC3C7;
+}
+.staffs-cont .sub-cont .subCont-head {
+  padding: 15px;
+}
+
+.costomers-cont .section-head button {
+  position: relative;
+  padding: 9px 30px;
+}
+.costomers-cont .section-head button span {
+  position: absolute;
+  font-size: 20px;
+  left: 10px;
+  top: 6px;
+}
+
+.inventory-cont .section-head button {
+  position: relative;
+  padding: 9px 30px;
+}
+.inventory-cont .section-head button span {
+  position: absolute;
+  font-size: 20px;
+  left: 10px;
+  top: 6px;
+}/*# sourceMappingURL=main.css.map */
